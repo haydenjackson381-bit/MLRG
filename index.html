@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLRG | Development Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #050505;
+            --bg-card: #0e0e0e;
+            --bg-hover: #161616;
+            --border: #222222;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --primary: #6366f1;
+            --success: #10b981;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.5; overflow-x: hidden; }
+
+        nav { 
+            position: fixed; width: 100%; top: 0; z-index: 100;
+            background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); padding: 1rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        nav .brand { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; background: linear-gradient(90deg, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        nav .links { display: flex; gap: 2rem; }
+        nav .links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        nav .links a:hover { color: var(--text-main); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 100px 5% 60px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 180px 5% 100px; }
+        .hero h1 { font-size: 4rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; line-height: 1.1; }
+        .hero p { color: var(--text-muted); font-size: 1.2rem; max-width: 650px; margin: 0 auto 40px; }
+
+        .btn { 
+            display: inline-block; text-align: center; padding: 14px 32px; border-radius: 8px; 
+            font-weight: 600; text-decoration: none; transition: 0.2s; cursor: pointer; border: none; font-size: 1rem;
+        }
+        .btn-primary { background: var(--text-main); color: var(--bg-main); width: 100%; }
+        .btn-primary:hover { background: #e0e0e0; }
+        .btn-hero { background: var(--text-main); color: var(--bg-main); width: auto; }
+        .btn-hero:hover { background: #e0e0e0; }
+
+        /* Team Section */
+        .team-grid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        .team-card { text-align: center; }
+        .team-avatar { width: 90px; height: 90px; border-radius: 50%; background: var(--border); margin: 0 auto 15px; border: 1px solid var(--border); }
+        .team-card h4 { font-size: 1.1rem; font-weight: 600; }
+        .team-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* Application Form */
+        .apply-section { background: radial-gradient(circle at top, rgba(99, 102, 241, 0.05), transparent 70%); padding: 100px 5%; border-top: 1px solid var(--border); margin-top: 20px; }
+        .form-container { 
+            background: rgba(14, 14, 14, 0.6); backdrop-filter: blur(16px); 
+            border: 1px solid var(--border); padding: 50px; border-radius: 16px; 
+            max-width: 600px; margin: 0 auto; 
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+        .form-group input, .form-group textarea { 
+            width: 100%; background: var(--bg-main); border: 1px solid var(--border); 
+            color: var(--text-main); padding: 14px; border-radius: 8px; outline: none; transition: 0.2s; 
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
+        
+        #status { margin-top: 15px; text-align: center; font-size: 0.9rem; font-weight: 500; }
+
+        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">MLRG</div>
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#team">Team</a>
+            <a href="#apply">Apply</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Engineering Excellence</h1>
+        <p>Bespoke development, Ui and Scripting, and robust architecture built specifically for your community.</p>
+        <a href="#apply" class="btn btn-hero">Initialize Application</a>
+    </header>
+
+    <div class="container" id="about" style="border-top: 1px solid var(--border);">
+        <div class="section-header">
+            <h2>About MLRG</h2>
+            <p>We are a specialized collective focused on delivering high-performance, seamless software solutions. Whether you are building an isolated script, comprehensive Discord bot architecture, or large-scale airball games, we build systems that allow your projects to operate autonomously and scale endlessly.</p>
+        </div>
+    </div>
+
+    <div class="container" id="team" style="padding-top: 0;">
+        <div class="section-header" style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem;">Administration</h2>
+        </div>
+        <div class="team-grid">
+            
+            <div class="team-card">
+                <div class="team-avatar" style="background-image: url('founder.webp'); background-size: cover; background-position: center;"></div>
+                <h4>realscrubs</h4>
+                <p>Founder & Lead Engineer</p>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar"></div>
+                <h4>Systems Ops</h4>
+                <p>Infrastructure</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"></div>
+                <h4>Client Success</h4>
+                <p>Support</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="apply-section" id="apply">
+        <div class="section-header">
+            <h2>Initialize Application</h2>
+            <p>Submit your parameters directly to our development queue.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="applicationForm">
+                <div style="display: flex; gap: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label>Full Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="+1 (555) 000-0000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" required placeholder="name@domain.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Reason for Choosing MLRG</label>
+                    <textarea id="reason" rows="2" required placeholder="Why do you want to work with us?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Request Details</label>
+                    <textarea id="request" rows="4" required placeholder="Describe what you need built here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit Application</button>
+                <div id="status"></div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 MLRG Network. All systems operational.</p>
+    </footer>
+
+    <script>
+        document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerText = "Sending securely...";
+            statusDiv.style.color = "var(--text-main)";
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                reason: document.getElementById('reason').value,
+                request: document.getElementById('request').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/api/apply', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    statusDiv.innerText = "Application received successfully.";
+                    statusDiv.style.color = "var(--success)";
+                    document.getElementById('applicationForm').reset();
+                } else {
+                    statusDiv.innerText = "Failed to send to server.";
+                    statusDiv.style.color = "#ef4444";
+                }
+            } catch (error) {
+                statusDiv.innerText = "Connection error. Ensure backend is running.";
+                statusDiv.style.color = "#ef4444";
+            }
+        });
+    </script>
+</body>
+</html>
